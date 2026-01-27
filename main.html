@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>에이아이이잉 - Chatbot</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="new-chat" onclick="location.href='chat.html'" type="button">＋ 새 대화</button>
+      </div>
+
+      <ul class="chat-history" id="chatHistory"></ul>
+
+      <button class="sidebar-footer" id="settingsBtn" type="button">⚙ 설정</button>
+    </aside>
+
+    <main class="main">
+      <nav>
+        <div class="nav-wrap">
+          <a href="main.html" class="brand brand-link">
+            <span class="brand-text">AIIING</span>
+          </a>
+          <div class="nav-links">
+            <a href="#" onclick="event.preventDefault(); showToast(guideHtml)">
+              사용법
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero" id="start">
+  <div class="copy">
+    <div class="pill"><span class="dot"></span> 대화형 로그 분석 · 근거 기반 대응</div>
+    <h1>보안 로그를<br/>붙여넣고 물어보세요.</h1>
+    <p class="sub">
+      에이아이이잉은 로그에서 위험 신호를 추출하고 공격 가능성을 예측합니다.
+      그 다음 OWASP·MITRE 근거를 바탕으로 <b>한국어로</b> 대응을 안내합니다.
+    </p>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="location.href='chat.html'" type="button">대화 시작하기</button>
+    </div>
+  </div>
+
+  <div class="chat-shell" aria-label="Preview area">
+    <div class="chat-top">
+      <div class="title">
+        <strong>에이아이이잉</strong>
+        <small>로그 분석 · 질의응답</small>
+      </div>
+    </div>
+
+    <div class="media-area">
+
+    </div>
+  </div>
+</section>
+
+
+      <footer id="docs">
+        © 에이아이이잉 Demo · OWASP / MITRE 기반 근거 제공 · 팀 “이이잉(IIING)”
+      </footer>
+
+      <div class="settings-sheet" id="settingsSheet" aria-hidden="true">
+        <div class="settings-header">
+          <div class="settings-title">설정</div>
+          <button class="settings-close" id="settingsCloseBtn" type="button">✕</button>
+        </div>
+
+        <div class="settings-body">
+          <div class="setting-item">
+            <div>
+              <b>다크 모드</b>
+              <small>UI 테마를 변경합니다</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="darkToggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div>
+              <b>로컬 기록 초기화</b>
+              <small>저장된 채팅 기록을 삭제합니다</small>
+            </div>
+            <button class="danger" id="resetBtn" type="button">초기화</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-backdrop" id="settingsBackdrop" aria-hidden="true"></div>
+    </main>
+  </div>
+  <div id="toast" class="toast">
+    <div class="toast-box">
+      <button class="close" onclick="hideToast()">✕</button>
+      <div id="toastMessage" class="toast-guide"></div>
+    </div>
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

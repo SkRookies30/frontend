@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>에이아이이잉 - Chat</title>
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- ✅ main 스타일의 사이드바 유지 -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a class="brand-mini" href="main.html" title="메인으로">
+          <span class="brand-text-mini">AIIING</span>
+        </a>
+
+        <button class="new-chat" id="newChatBtn" type="button">＋ 새 대화</button>
+      </div>
+
+      <ul class="chat-history" id="chatHistory"></ul>
+
+      <button class="sidebar-footer" id="settingsBtn" type="button">⚙ 설정</button>
+    </aside>
+
+    <!-- ✅ 채팅 화면 -->
+    <main class="main">
+      <header class="chat-header">
+        <div class="header-left">
+          <div class="title">에이아이이잉</div>
+          <div class="subtitle">로그 분석 · 근거 기반 대응</div>
+        </div>
+
+        <div class="header-right">
+          <button class="ghost" id="insertSampleBtn" type="button">샘플 로그</button>
+        </div>
+      </header>
+
+      <section class="chat-stage">
+        <div class="chat-body" id="chatBody">
+          <!-- 초기 메시지 -->
+          <div class="msg">
+            <div class="avatar">AI</div>
+            <div class="bubble">
+              <div class="meta"><span class="who">에이아이이잉</span> · 방금</div>
+              <p>
+안녕하세요! 로그를 붙여넣고 질문해보세요.
+예) “왜 위험해?”, “이거 공격이야?”, “지금 뭐 해야 해?”, “한 줄 요약”
+              </p>
+              <div class="tips">
+                <button class="chip" data-q="왜 위험해?">왜 위험해?</button>
+                <button class="chip" data-q="이거 공격이야?">이거 공격이야?</button>
+                <button class="chip" data-q="지금 뭐 해야 해?">지금 뭐 해야 해?</button>
+                <button class="chip" data-q="대응 방법 한 줄로">대응 한 줄</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 입력창 -->
+        <div class="composer">
+          <textarea id="composer" placeholder="질문 또는 로그를 입력하세요" rows="1"></textarea>
+          <button class="send" id="sendBtn" type="button">전송</button>
+        </div>
+
+        <div class="hint">
+          <span><span class="kbd">Enter</span> 전송 · <span class="kbd">Shift</span>+<span class="kbd">Enter</span> 줄바꿈</span>
+          <span>로컬 기록 저장됨</span>
+        </div>
+      </section>
+
+      <!-- 설정 바텀시트 -->
+      <div class="settings-sheet" id="settingsSheet" aria-hidden="true">
+        <div class="settings-header">
+          <div class="settings-title">설정</div>
+          <button class="settings-close" id="settingsCloseBtn" type="button">✕</button>
+        </div>
+
+        <div class="settings-body">
+          <div class="setting-item">
+            <div>
+              <b>다크 모드</b>
+              <small>UI 테마를 변경합니다</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="darkToggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div>
+              <b>로컬 기록 초기화</b>
+              <small>저장된 모든 채팅 기록을 삭제합니다</small>
+            </div>
+            <button class="danger" id="resetBtn" type="button">초기화</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-backdrop" id="settingsBackdrop" aria-hidden="true"></div>
+    </main>
+  </div>
+
+  <script src="js/chat.js" defer></script>
+</body>
+</html>
