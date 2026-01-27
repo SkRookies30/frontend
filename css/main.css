@@ -186,13 +186,13 @@ h1{
 }
 
 .chat-shell{
-  width:100%;
-  max-width:500px;
-  height:600px;
+  width:80%;
+  max-width:600px;
+  height:700px;
   display:flex;
   flex-direction:column;
-  background:#fff;
-  border:1px solid rgba(15,23,42,.08);
+  background:#ffffff;
+  border:1px solid rgba(137, 142, 155, 0.08);
   border-radius:20px;
   box-shadow:0 25px 70px rgba(15,23,42,.12);
   overflow:hidden;
