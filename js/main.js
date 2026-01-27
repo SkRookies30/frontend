@@ -59,31 +59,26 @@ function createNewChat(title='새 대화'){
   saveChats();
 }
 
-function loadChats(){
-  chats = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-
-  if(chats.length === 0){
+function loadChat(id) { // 화면이동
+  // 클릭한 채팅의 ID를 가지고 채팅 페이지(chat.html)로 이동합니다.
+  // URL 뒤에 ?id=숫자 형태의 파라미터를 붙여서 넘겨줍니다.
+  console.log("클릭된 채팅 ID:", id); // 브라우저 콘솔(F12)에서 확인
+  if (!id) {
+    console.error("ID가 없습니다!");
     return;
   }
+  location.href = `chat.html?id=${id}`;
+}
 
-  currentChatId = chats[0].id;
-
+function loadChats() {
+  chats = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
   renderSidebar();
-  loadChat(currentChatId);
-
-  const savedTheme = localStorage.getItem(STORAGE_THEME) || 'light';
-  if(savedTheme === 'dark'){
-    document.body.classList.add('dark');
-    darkToggle.checked = true;
-  }
-
 }
 
 window.addEventListener('DOMContentLoaded', () => {
   applySavedTheme();
   loadChats(); // main.html
 });
-window.onload = loadChats;
 
 function deleteChat(id){
   chats = chats.filter(c => c.id !== id);
