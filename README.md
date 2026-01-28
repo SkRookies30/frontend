@@ -5,7 +5,7 @@
 백엔드의 머신러닝·LLM 분석 결과를 기반으로, 공격 유형 및 이상 징후를 직관적으로 전달하는 것을 목표로 합니다.
 
 ---
-'''
+```
 ## 📌 프로젝트 구성
 FRONTEND-MAIN/
 ├─ agents/ # AI 에이전트 연동 모듈
@@ -28,7 +28,7 @@ FRONTEND-MAIN/
 ├─ main.html # 메인 화면
 ├─ requirements.txt # Python 의존성 목록
 └─ README.md
-'''
+```
 ---
 
 ## 🖥️ 주요 기능
